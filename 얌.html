@@ -1,0 +1,72 @@
+﻿<!DOCTYPE html>
+<html>
+<head>  
+<style type="text/css">
+*{
+margin:0;
+padding:0;
+line-height:1.4;}
+
+body{
+padding:40px;
+font-family:Arial, Helvetica, sans-serif;}
+
+dl{
+width:320px;
+margin:0 0 20px;}
+
+dt{
+padding:6px 10px 6px;
+background:#444 url(bg.png) repeat-y 100% 0;
+color:#fff;
+margin:0 0 3px;
+font-weight:bold;
+border-radius:8px 0 0 0;
+border-left:2px solid #444;
+border-top:2px solid #444;}
+
+dd{
+padding:8px 10px 12px;
+width:298px;
+border-left:2px solid #444;
+background:#eee;
+margin:-3px 0 3px;}
+</style> 
+<script src="http://code.jquery.com/jquery-1.10.2.js"></script>   
+<script>
+$(function(){
+  $('.accordion').each(function(){
+    var dl = $(this);
+    var allDt = dl.find('dt');
+    var allDd = dl.find('dd');
+    allDd.hide();
+    allDt.css('cursor','pointer');
+    allDt.click(function(){
+      var dt = $(this);
+      var dd = dt.next();
+      allDd.hide();
+
+      dd.show();
+      allDt.css('cursor','pointer'); 
+      dt.css('cursor','default');
+    });
+  });
+});
+
+</script>
+</head>
+<body>
+<dl class="accordion">
+  <dt>박</dt>
+    <dd>바</dd>
+  <dt>태</dt>
+    <dd>보</dd>
+  <dt>준</dt>
+    <dd>메롱</dd>
+</dl>
+
+
+
+</body>
+
+</html>
